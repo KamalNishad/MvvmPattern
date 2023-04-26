@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="LoginViewModel"
+            type="com.tecchidesi.mvvmpattern.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:background="#43673AB7"
+        android:gravity="center"
+        tools:context=".LoginActivity"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_margin="20dp"
+            android:layout_gravity="left"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30dp"
+            android:text="Login "/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter username"
+                android:maxLength="20"
+                android:inputType="textPersonName"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter password"
+                android:maxLength="20"
+                android:inputType="numberPassword"
+                android:backgroundTint="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_save"
+            android:padding="10dp"
+            android:layout_margin="10dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->LoginViewModel.onClick()}"
+            android:text="Sumbit"/>
+
+    </LinearLayout>
+
+
+
+</layout>
